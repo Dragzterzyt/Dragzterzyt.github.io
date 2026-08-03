@@ -1,56 +1,141 @@
-/* --- LISTINO MINIMAL & ELEGANTE --- */
-.minimal-list-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 8px 50px; /* Ampio spazio pulito tra le due colonne */
-    margin-top: 35px;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Segoe+UI:wght@400;600;700&display=swap');
+
+:root {
+    --primary: #f0a30a; 
+    --text-light: #ffffff;
+    --text-gray: #cccccc;
+    --success: #2ecc71; /* Verde per i prezzi */
 }
 
-.minimal-row {
+/* --- SFONDO E BODY --- */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--text-light);
+    /* L'immagine viene applicata qui: niente più div neri sopra */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('sfondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #000;
+}
+
+/* --- NAVIGAZIONE (Sempre cliccabile) --- */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Linea divisoria sottilissima */
-    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
-    border-radius: 4px;
+    padding: 20px 50px;
+    position: fixed; /* Header fisso in alto */
+    top: 0; left: 0; width: 100%;
+    box-sizing: border-box;
+    z-index: 9999;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+
+.logo-small img { width: 100px; height: auto; }
+.navbar-center { display: flex; gap: 30px; }
+.navbar-center a {
+    color: #fff;
     text-decoration: none;
-}
-
-/* Effetto al passaggio del mouse: la riga si sposta a destra e si illumina di oro */
-.minimal-row:hover {
-    background: rgba(255, 255, 255, 0.03);
-    transform: translateX(8px);
-    border-bottom-color: var(--primary);
-}
-
-.item-name-min {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
     font-weight: 600;
-    color: #eeeeee;
-    letter-spacing: 0.5px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.navbar-center a:hover { color: var(--primary); }
+
+.btn-outline-small {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid var(--primary);
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 12px;
 }
 
-.item-price-box {
+/* --- CONTENITORI --- */
+.container {
+    max-width: 1000px;
+    margin: 140px auto 40px auto; 
+    padding: 20px;
+}
+
+.section-block {
+    background: rgba(10, 10, 10, 0.85);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+    font-family: 'Oswald';
+    font-size: 32px;
+    text-transform: uppercase;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* --- LISTINO MINIMAL --- */
+.minimal-list {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    white-space: nowrap;
+    gap: 10px;
 }
 
-.item-price-min {
-    font-family: 'Oswald', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: #2ecc71; /* Verde brillante ma elegante */
-    letter-spacing: 0.5px;
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    border-left: 3px solid transparent;
+    transition: 0.3s;
 }
 
-.fdo-tag-min {
-    font-size: 11px;
-    color: #ff5252;
-    font-family: 'Segoe UI', sans-serif;
+.list-item:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-left-color: var(--primary);
+}
+
+.item-name {
+    font-size: 16px;
     font-weight: 600;
-    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
+
+.item-price {
+    font-family: 'Oswald';
+    font-size: 20px;
+    color: var(--success);
+    font-weight: bold;
+}
+
+.fdo-tag {
+    font-size: 11px;
+    color: #ff4a4a;
+    margin-left: 10px;
+}
+
+/* --- HOME --- */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.subtitle { font-family: 'Oswald'; font-size: 24px; letter-spacing: 4px; margin-bottom: 50px; }
+.btn-main { background: var(--primary); color: #000; padding: 15px 40px; text-decoration: none; font-family: 'Oswald'; font-weight: 700; border-radius: 4px; }
+.btn-secondary { background: transparent; border: 2px solid #fff; color: #fff; padding: 15px 40px; text-decoration: none; font-family: 'Oswald'; border-radius: 4px; margin-left: 10px; }
+
+.bottom-logos { position: fixed; bottom: 30px; width: 100%; display: flex; justify-content: center; gap: 30px; opacity: 0.5; }
