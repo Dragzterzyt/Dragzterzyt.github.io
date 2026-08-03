@@ -3,131 +3,56 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Los Santos Customs - Listino Prezzi</title>
+    <title>Los Santos Customs - Listino</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <div class="logo-small"><img src="logo.png" alt="LSC Logo"></div>
+        <div class="logo-small"><img src="logo.png" alt="LSC"></div>
         <nav class="navbar-center">
             <a href="index.html">Home</a>
             <a href="storia.html">Storia</a>
             <a href="listino.html">Listino Prezzi</a>
             <a href="foto.html">I Nostri Lavori</a>
         </nav>
-        <div class="navbar-right">
-            <a href="https://cfx.re/join/6my4kj4" target="_blank" class="btn-outline-small">Entra in Città</a>
-        </div>
+        <div class="navbar-right"><a href="https://cfx.re/join/6my4kj4" target="_blank" class="btn-outline-small">Entra in Città</a></div>
     </header>
 
     <div class="container">
         <div class="section-block">
-            <h2 style="margin-bottom: 5px;">MATERIALI MECCANICI</h2>
-            <p style="text-align:center; color:gray; font-size: 14px; margin-bottom: 30px;">Listino ufficiale parti e componenti</p>
-            
-            <div class="inventory-grid">
-                
-                <!-- TABLET -->
-                <div class="item-card">
-                    <div class="item-weight">100g</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/3645/3645851.png" class="item-icon"> <!-- Icona di esempio -->
-                    <div class="item-name">Tablet del Meccanico</div>
-                    <div class="item-price">$1.100</div>
+            <h2>Materiali Meccanici</h2>
+            <div class="grid-container">
+                <div class="price-card"><div class="price-title">Tablet del Meccanico</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Kit di Pulizia</div><div class="price-value">$25</div></div>
+                <div class="price-card"><div class="price-title">Nastro Adesivo</div><div class="price-value">$500</div></div>
+                <div class="price-card">
+                    <div class="price-title">Kit di Riparazione</div>
+                    <div class="price-value">$1.200</div>
+                    <span class="price-fdo">FDO: $950</span>
                 </div>
-
-                <!-- KIT PULIZIA -->
-                <div class="item-card">
-                    <div class="item-weight">10g</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/995/995053.png" class="item-icon">
-                    <div class="item-name">Kit di Pulizia</div>
-                    <div class="item-price" style="color: #2ecc71;">$25</div>
-                </div>
-
-                <!-- NASTRO ADESIVO -->
-                <div class="item-card">
-                    <div class="item-weight">10g</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/8152/8152204.png" class="item-icon">
-                    <div class="item-name">Nastro Adesivo</div>
-                    <div class="item-price">$500</div>
-                </div>
-
-                <!-- KIT RIPARAZIONE -->
-                <div class="item-card">
-                    <div class="item-weight">100g</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/1085/1085468.png" class="item-icon">
-                    <div class="item-name">Kit di Riparazione</div>
-                    <div class="item-price">$1.200</div>
-                    <div class="fdo-price">FDO: $950</div>
-                </div>
-
-                <!-- PARTI COSMETICHE -->
-                <div class="item-card">
-                    <div class="item-weight">100g</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/3062/3062331.png" class="item-icon">
-                    <div class="item-name">Parti Cosmetiche</div>
-                    <div class="item-price">$1.100</div>
-                </div>
-
-                <!-- PARTI PRESTAZIONI -->
-                <div class="item-card">
-                    <div class="item-weight">100g</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/1165/1165925.png" class="item-icon">
-                    <div class="item-name">Parti per Prestazioni</div>
-                    <div class="item-price">$1.100</div>
-                </div>
-
-                <!-- OLIO MOTORE -->
-                <div class="item-card">
-                    <div class="item-weight">100g</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2830/2830305.png" class="item-icon">
-                    <div class="item-name">Olio Motore</div>
-                    <div class="item-price">$800</div>
-                </div>
-
-                <!-- FILTRO ARIA -->
-                <div class="item-card">
-                    <div class="item-weight">100g</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/1661/1661103.png" class="item-icon">
-                    <div class="item-name">Filtro Aria</div>
-                    <div class="item-price">$1.100</div>
-                </div>
-
-                <!-- KIT DISTANZIALI -->
-                <div class="item-card">
-                    <div class="item-weight">100g</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2167/2167443.png" class="item-icon">
-                    <div class="item-name">Kit Distanziali</div>
-                    <div class="item-price">$900</div>
-                </div>
-
-                <!-- FUEL PUMPER -->
-                <div class="item-card">
-                    <div class="item-weight">1000kg</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2933/2933807.png" class="item-icon">
-                    <div class="item-name">Fuel Pumper</div>
-                    <div class="item-price">$5.000</div>
-                </div>
-
-                <!-- TURBO -->
-                <div class="item-card">
-                    <div class="item-weight">100g</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/1165/1165961.png" class="item-icon">
-                    <div class="item-name">Turbo</div>
-                    <div class="item-price">$1.100</div>
-                </div>
-
-                <!-- PNEUMATICI OFFROAD -->
-                <div class="item-card">
-                    <div class="item-weight">100g</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2043/2043833.png" class="item-icon">
-                    <div class="item-name">Pneumatici Off-Road</div>
-                    <div class="item-price" style="color: #2ecc71;">$30.000</div>
-                </div>
-
+                <div class="price-card"><div class="price-title">Parti Cosmetiche</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Kit per Riverniciatura</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Parti per Prestazioni</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Kit Extra</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Kit Fumo Pneumatici</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Set di Ruote</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Olio Motore</div><div class="price-value">$800</div></div>
+                <div class="price-card"><div class="price-title">Sostituzione Frizioni</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Filtro Aria</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Candela Accensione</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Pastiglie Freni</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Sospensioni</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Sostituzione Pneumatici</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Controller Illuminazione</div><div class="price-value">$900</div></div>
+                <div class="price-card"><div class="price-title">Kit Distanziali</div><div class="price-value">$900</div></div>
+                <div class="price-card"><div class="price-title">Fuel Pumper</div><div class="price-value">$5.000</div></div>
+                <div class="price-card"><div class="price-title">Motore Elettrico</div><div class="price-value">$900</div></div>
+                <div class="price-card"><div class="price-title">Turbo</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Batteria Elettrica</div><div class="price-value">$900</div></div>
+                <div class="price-card"><div class="price-title">Raffreddamento</div><div class="price-value">$900</div></div>
+                <div class="price-card"><div class="price-title">Pneumatici Off-Road</div><div class="price-value">$30.000</div></div>
             </div>
         </div>
     </div>
-
 </body>
 </html>
