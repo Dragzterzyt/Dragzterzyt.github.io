@@ -20,14 +20,13 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 0; 
             padding: 0; 
-            /* Sfondo HD con Auto Custom e Officina */
             background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('https://unsplash.com'); 
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
         }
 
-        /* Barra di Navigazione Fissa */
+        /* Barra di Navigazione */
         header { 
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(12px);
@@ -56,7 +55,7 @@
             flex-wrap: wrap;
         }
 
-        /* Pulsanti del Menu / Schede */
+        /* Bottoni Menu */
         .tab-btn {
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-light);
@@ -68,7 +67,7 @@
             cursor: pointer;
             border-radius: 4px;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .tab-btn:hover {
@@ -90,19 +89,13 @@
             padding: 40px 20px; 
         }
 
-        /* Gestione Visibilità Schede */
+        /* Gestione Pagine CSS */
         .tab-content {
-            display: none; /* Nasconde le schede non attive */
-            animation: fadeIn 0.4s ease forwards;
+            display: none; /* Di base nascoste */
         }
 
         .tab-content.active {
             display: block; /* Mostra solo la scheda attiva */
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         h2 {
@@ -125,7 +118,6 @@
             line-height: 1.6;
         }
 
-        /* Pannello Schede Contenuto */
         .main-card {
             background: var(--bg-card);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -134,7 +126,7 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.7);
         }
 
-        /* Griglia Listino Prezzi */
+        /* Griglia Prezzi */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -170,7 +162,7 @@
             display: block;
         }
 
-        /* Sezione Galleria Foto */
+        /* Griglia Galleria Foto */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -185,12 +177,6 @@
             padding: 12px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s;
-        }
-
-        .photo-card:hover {
-            transform: scale(1.02);
-            border-color: var(--primary);
         }
 
         .photo-card img {
@@ -209,7 +195,7 @@
             color: var(--text-light);
         }
 
-        /* Bottoni Reali Esterni (Risoluzione Bug Link) */
+        /* Bottoni Collegamento Esterno */
         .action-box {
             text-align: center;
             padding: 20px 0;
@@ -224,29 +210,26 @@
             font-size: 18px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-            cursor: pointer;
         }
 
         .btn-discord {
-            background-color: #5865F2 !important;
-            color: white !important; 
+            background-color: #5865F2;
+            color: white; 
         }
 
         .btn-discord:hover { 
-            background-color: #4752C4 !important;
-            box-shadow: 0 0 25px rgba(88, 101, 242, 0.5);
+            background-color: #4752C4;
         }
 
         .btn-google {
-            background-color: var(--primary) !important;
-            color: #0a0a0a !important;
+            background-color: var(--primary);
+            color: #0a0a0a;
         }
 
         .btn-google:hover {
-            background-color: #f7c343 !important;
-            box-shadow: 0 0 25px var(--neon-glow);
+            background-color: #f7c343;
         }
 
         footer {
@@ -265,13 +248,12 @@
         <div class="logo-container">
             <img src="logo.png" alt="Los Santos Customs Logo">
         </div>
-        <!-- Menu Navigazione a Schede -->
         <nav>
-            <button class="tab-btn active" onclick="openTab(event, 'storia')">Storia</button>
-            <button class="tab-btn" onclick="openTab(event, 'listino')">Listino Prezzi</button>
-            <button class="tab-btn" onclick="openTab(event, 'foto')">Foto Lavori</button>
-            <button class="tab-btn" onclick="openTab(event, 'contatti')">Contatti</button>
-            <button class="tab-btn" onclick="openTab(event, 'candidature')">Candidature</button>
+            <button class="tab-btn active" onclick="openTab('storia')">Storia</button>
+            <button class="tab-btn" onclick="openTab('listino')">Listino Prezzi</button>
+            <button class="tab-btn" onclick="openTab('foto')">Foto Lavori</button>
+            <button class="tab-btn" onclick="openTab('contatti')">Contatti</button>
+            <button class="tab-btn" onclick="openTab('candidature')">Candidature</button>
         </nav>
     </header>
 
@@ -297,3 +279,9 @@
                 <div class="grid-container">
                     <div class="price-card"><div class="price-title">Kit di Pulizia</div><div class="price-value">$200</div></div>
                     <div class="price-card"><div class="price-title">Nastro Adesivo</div><div class="price-value">$500</div></div>
+                    <div class="price-card"><div class="price-title">Kit di Riparazione</div><div class="price-value">$1.200 <span>FDO: $950</span></div></div>
+                    <div class="price-card"><div class="price-title">Parti Cosmetiche</div><div class="price-value">$1.100</div></div>
+                    <div class="price-card"><div class="price-title">Kit per Riverniciatura</div><div class="price-value">$1.100</div></div>
+                    <div class="price-card"><div class="price-title">Parti per Prestazioni</div><div class="price-value">$1.100</div></div>
+                    <div class="price-card"><div class="price-title">Kit Extra</div><div class="price-value">$1.100</div></div>
+                    <div class="price-card"><div class="price-title">Kit Fumo per Pneumatici</div><div class="price-value">$1.100</div></div>
