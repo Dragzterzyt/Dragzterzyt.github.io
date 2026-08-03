@@ -20,13 +20,14 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 0; 
             padding: 0; 
+            /* Sfondo HD con Auto Custom e Officina */
             background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('https://unsplash.com'); 
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
         }
 
-        /* Barra di Navigazione */
+        /* Barra di Navigazione Fissa */
         header { 
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(12px);
@@ -55,7 +56,7 @@
             flex-wrap: wrap;
         }
 
-        /* Bottoni Menu */
+        /* Pulsanti del Menu / Schede */
         .tab-btn {
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-light);
@@ -89,13 +90,13 @@
             padding: 40px 20px; 
         }
 
-        /* Gestione Pagine CSS */
+        /* Gestione Visibilità Pagine */
         .tab-content {
-            display: none; /* Di base nascoste */
+            display: none; /* Nasconde le pagine */
         }
 
         .tab-content.active {
-            display: block; /* Mostra solo la scheda attiva */
+            display: block; /* Mostra la pagina attiva */
         }
 
         h2 {
@@ -126,7 +127,7 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.7);
         }
 
-        /* Griglia Prezzi */
+        /* Griglia Listino Prezzi */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -162,7 +163,7 @@
             display: block;
         }
 
-        /* Griglia Galleria Foto */
+        /* Galleria Foto */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -195,7 +196,7 @@
             color: var(--text-light);
         }
 
-        /* Bottoni Collegamento Esterno */
+        /* Scatola Bottoni Esterni */
         .action-box {
             text-align: center;
             padding: 20px 0;
@@ -248,18 +249,19 @@
         <div class="logo-container">
             <img src="logo.png" alt="Los Santos Customs Logo">
         </div>
+        <!-- Menu Navigazione -->
         <nav>
-            <button class="tab-btn active" onclick="openTab('storia')">Storia</button>
-            <button class="tab-btn" onclick="openTab('listino')">Listino Prezzi</button>
-            <button class="tab-btn" onclick="openTab('foto')">Foto Lavori</button>
-            <button class="tab-btn" onclick="openTab('contatti')">Contatti</button>
-            <button class="tab-btn" onclick="openTab('candidature')">Candidature</button>
+            <button class="tab-btn active" onclick="openTab('storia', this)">Storia</button>
+            <button class="tab-btn" onclick="openTab('listino', this)">Listino Prezzi</button>
+            <button class="tab-btn" onclick="openTab('foto', this)">Foto Lavori</button>
+            <button class="tab-btn" onclick="openTab('contatti', this)">Contatti</button>
+            <button class="tab-btn" onclick="openTab('candidature', this)">Candidature</button>
         </nav>
     </header>
 
     <div class="container">
 
-        <!-- SCHEDA 1: STORIA -->
+        <!-- PAGINA 1: STORIA -->
         <div id="storia" class="tab-content active">
             <div class="main-card">
                 <h2>Storia dell'Azienda</h2>
@@ -270,7 +272,7 @@
             </div>
         </div>
 
-        <!-- SCHEDA 2: LISTINO PREZZI -->
+        <!-- PAGINA 2: LISTINO PREZZI -->
         <div id="listino" class="tab-content">
             <div class="main-card">
                 <h2>Listino Prezzi Ufficiale</h2>
@@ -284,4 +286,3 @@
                     <div class="price-card"><div class="price-title">Kit per Riverniciatura</div><div class="price-value">$1.100</div></div>
                     <div class="price-card"><div class="price-title">Parti per Prestazioni</div><div class="price-value">$1.100</div></div>
                     <div class="price-card"><div class="price-title">Kit Extra</div><div class="price-value">$1.100</div></div>
-                    <div class="price-card"><div class="price-title">Kit Fumo per Pneumatici</div><div class="price-value">$1.100</div></div>
