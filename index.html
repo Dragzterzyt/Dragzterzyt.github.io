@@ -3,39 +3,58 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Los Santos Customs - Storia</title>
-    <!-- Richiama il file CSS separato -->
+    <title>Los Santos Customs - Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Sfondo. Ricordati di caricare un'immagine chiamata 'sfondo.jpg' -->
+    <div class="bg-image"></div>
+
+    <!-- HEADER: Logo a sx, Menu al centro, Bottone a dx -->
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Los Santos Customs Logo">
+        <div class="logo-small">
+            <!-- Logo in alto a sinistra -->
+            <img src="logo.png" alt="LSC Logo Piccolo">
         </div>
-        <!-- Menu con collegamenti ai file HTML -->
-        <nav class="navbar">
-            <a href="index.html">Storia</a>
-            <a href="listino.html">Listino Prezzi</a>
-            <a href="foto.html">Foto Lavori</a>
-            <a href="contatti.html">Contatti e Candidature</a>
+        
+        <nav class="navbar-center">
+            <a href="index.html">Home</a>
+            <a href="storia.html">About Us</a>
+            <a href="listino.html">Services</a>
+            <a href="foto.html">Gallery</a>
         </nav>
+
+        <div class="navbar-right">
+            <!-- Il tasto "Sign up" dello schizzo lo usiamo per il server -->
+            <a href="contatti.html" class="btn-outline-small">Entra in Città</a>
+        </div>
     </header>
 
-    <div class="container">
-        <!-- SEZIONE STORIA -->
-        <div class="section-block">
-            <h2>Storia dell'Azienda</h2>
-            <p style="line-height: 1.8; color: var(--text-gray); font-size: 16px; margin: 0;">
-                Fondata nel <strong>1987</strong> nel cuore di San Andreas, <strong>Los Santos Customs</strong> nasce come una piccola officina di riparazioni locali per poi trasformarsi nel punto di riferimento assoluto per il tuning di lusso, le modifiche motoristiche e le verniciature custom dell'intera città. <br><br>
-                Superando le sfide del tempo e l'evoluzione tecnologica dei veicoli moderni, l'officina ha mantenuto intatta la propria filosofia originaria: <strong>passione maniacale per i dettagli, affidabilità assoluta e rispetto per il cliente</strong>. Oggi serviamo i cittadini e le forze dell'ordine con attrezzature all'avanguardia per garantire prestazioni senza compromessi su qualsiasi tipo di mezzo.
-            </p>
+    <!-- ZONA CENTRALE (Hero) -->
+    <main class="hero-section">
+        
+        <!-- Il logo gigante al centro -->
+        <img src="logo.png" alt="Los Santos Customs" class="big-logo">
+        
+        <!-- Sottotitolo esattamente come nell'immagine -->
+        <h3 class="subtitle">CUSTOM FABRICATION | REPAIR | MODIFICATION</h3>
+        
+        <!-- I due bottoni in stile schizzo -->
+        <div class="hero-buttons">
+            <a href="https://discord.gg/desWhmewQr" target="_blank" class="btn-main">ENTRA NEL DISCORD</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSocgiU78P1UJOQKbc5kQoHoAhihJGicUzLz80uEp9kMHDAQ/viewform?usp=dialog" target="_blank" class="btn-secondary">MODULO CANDIDATURE</a>
         </div>
-    </div>
 
-    <footer>
-        &copy; 2026 Los Santos Customs. Sito ufficiale per server FiveM. Tutti i diritti riservati. -Drag
-    </footer>
+    </main>
+
+    <!-- I Loghetti piccoli in basso come nel disegno -->
+    <div class="bottom-logos">
+        <!-- Puoi mettere delle piccole icone o scritte qui -->
+        <span style="font-weight:bold; letter-spacing: 2px;">LOS SANTOS</span>
+        <span style="font-weight:bold; border: 1px solid white; border-radius: 50%; padding: 2px 5px;">LSC</span>
+        <span style="font-weight:bold; letter-spacing: 2px;">FIVE-M</span>
+    </div>
 
 </body>
 </html>
