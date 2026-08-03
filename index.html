@@ -6,12 +6,16 @@
     <title>Los Santos Customs - FiveM Official</title>
     <style>
         :root {
-            --primary: #dfad36; /* Oro/Giallo LSC */
+            --primary: #dfad36; /* Giallo/Oro LSC */
             --bg-dark: #0a0a0a;
-            --bg-card: rgba(20, 20, 20, 0.75);
+            --bg-card: rgba(20, 20, 20, 0.8);
             --text-light: #ffffff;
             --text-gray: #b3b3b3;
-            --neon-glow: rgba(223, 173, 54, 0.3);
+            --neon-glow: rgba(223, 173, 54, 0.25);
+        }
+
+        html {
+            scroll-behavior: smooth; /* Scorrimento fluido quando si clicca sul menu */
         }
 
         body { 
@@ -20,19 +24,18 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 0; 
             padding: 0; 
-            /* Utilizza il file sfondo.jpg caricato sul tuo repository */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('sfondo.jpg'); 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('sfondo.jpg'); 
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
         }
 
-        /* Navbar / Header Super Moderno */
+        /* Navbar Navigazione */
         header { 
-            background: rgba(10, 10, 10, 0.8);
+            background: rgba(10, 10, 10, 0.9);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            padding: 20px; 
+            padding: 15px 20px; 
             text-align: center;
             border-bottom: 2px solid var(--primary);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
@@ -42,52 +45,85 @@
         }
 
         .logo-container img {
-            width: 130px;
+            width: 100px;
             height: auto;
-            filter: drop-shadow(0 0 10px rgba(223, 173, 54, 0.5));
-            transition: transform 0.4s ease;
+            filter: drop-shadow(0 0 8px rgba(223, 173, 54, 0.4));
         }
 
-        .logo-container img:hover {
-            transform: rotate(5deg) scale(1.05);
+        nav {
+            margin-top: 15px;
         }
 
-        .subtitle {
-            font-size: 13px;
-            color: var(--primary);
-            font-weight: bold;
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
             text-transform: uppercase;
-            margin-top: 10px;
-            letter-spacing: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            margin: 0 15px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
         }
 
         .container { 
             max-width: 1200px; 
             margin: 0 auto; 
-            padding: 40px 20px; 
+            padding: 60px 20px; 
         }
 
-        h1 {
-            font-size: 36px;
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 32px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-            margin-bottom: 5px;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
-        .intro-text {
+        p.section-desc {
+            color: var(--text-gray);
+            text-align: center;
+            font-size: 16px;
+            max-width: 700px;
+            margin: -10px auto 40px auto;
+            line-height: 1.6;
+        }
+
+        /* Stile Sezione Storia */
+        .story-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 12px;
+            line-height: 1.8;
             color: var(--text-gray);
             font-size: 16px;
-            margin-bottom: 50px;
-            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* Griglia a Schede Moderne con Effetto Vetro */
+        .story-box strong {
+            color: var(--text-light);
+        }
+
+        /* Griglia Listino Prezzi */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            gap: 20px;
         }
 
         .card {
@@ -95,89 +131,69 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 25px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             text-align: center;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
         }
 
         .card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             border-color: var(--primary);
-            box-shadow: 0 0 20px var(--neon-glow);
-            background: rgba(25, 25, 25, 0.9);
+            box-shadow: 0 0 15px var(--neon-glow);
         }
 
         .card-title {
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text-light);
             letter-spacing: 1px;
-            margin-bottom: 12px;
-            border-bottom: 1px solid rgba(223, 173, 54, 0.2);
-            padding-bottom: 8px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(223, 173, 54, 0.1);
+            padding-bottom: 6px;
             width: 100%;
         }
 
         .card-price {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 800;
             color: var(--primary);
-            letter-spacing: 1px;
         }
 
         .card-price span {
-            font-size: 13px;
+            font-size: 12px;
             color: #ff4a4a;
-            font-weight: bold;
             display: block;
-            margin-top: 5px;
+            margin-top: 4px;
         }
 
-        /* Pannello Pulsanti di Azione Inferiore */
-        .action-panel {
-            margin-top: 60px;
+        /* Pannelli Contatti e Candidature */
+        .info-panel {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
             padding: 40px;
-            background: rgba(15, 15, 15, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 16px;
-            border: 1px solid rgba(223, 173, 54, 0.15);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-        }
-
-        .action-panel h2 {
-            text-transform: uppercase;
-            color: var(--primary);
-            margin-top: 0;
-            letter-spacing: 1px;
-        }
-
-        .button-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-top: 20px;
         }
 
         .btn { 
             display: inline-block;
             padding: 16px 40px; 
             text-decoration: none; 
-            border-radius: 8px; 
+            border-radius: 6px; 
             font-weight: bold; 
             font-size: 16px;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            margin-top: 10px;
         }
 
         .btn-discord {
@@ -191,24 +207,24 @@
             box-shadow: 0 6px 20px rgba(88, 101, 242, 0.4);
         }
 
-        .btn-apply {
+        .btn-google {
             background-color: var(--primary);
             color: #0a0a0a;
         }
 
-        .btn-apply:hover {
+        .btn-google:hover {
             background-color: #f7c343;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(223, 173, 54, 0.4);
         }
 
         footer {
-            margin-top: 80px;
+            text-align: center;
+            margin-top: 60px;
             padding: 30px;
             color: var(--text-gray);
             font-size: 13px;
             border-top: 1px solid rgba(255,255,255,0.05);
-            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -216,51 +232,46 @@
 
     <header>
         <div class="logo-container">
-            <!-- Richiama il file logo.png caricato sul tuo repository -->
             <img src="logo.png" alt="Los Santos Customs Logo">
         </div>
-        <div class="subtitle">Auto Repairs & Tuning - Est. 1987</div>
+        <nav>
+            <a href="#storia">Storia</a>
+            <a href="#listino">Listino</a>
+            <a href="#contatti">Contatti</a>
+            <a href="#candidature">Candidature</a>
+        </nav>
     </header>
 
     <div class="container">
-        <h1>Listino Prezzi Meccanici</h1>
-        <p class="intro-text">La tua auto. La nostra passione. Professionalità, affidabilità e prestazioni senza compromessi.</p>
-        
-        <div class="grid-container">
-            <!-- RIGA 1 -->
-            <div class="card"><div class="card-title">Kit di Pulizia</div><div class="card-price">$200</div></div>
-            <div class="card"><div class="card-title">Nastro Adesivo</div><div class="card-price">$500</div></div>
-            <div class="card"><div class="card-title">Kit di Riparazione</div><div class="card-price">$1.200 <span>FDO: $950</span></div></div>
-            <div class="card"><div class="card-title">Parti Cosmetiche</div><div class="card-price">$1.100</div></div>
 
-            <!-- RIGA 2 -->
-            <div class="card"><div class="card-title">Kit per Riverniciatura</div><div class="card-price">$1.100</div></div>
-            <div class="card"><div class="card-title">Parti per Prestazioni</div><div class="card-price">$1.100</div></div>
-            <div class="card"><div class="card-title">Kit Extra</div><div class="card-price">$1.100</div></div>
-            <div class="card"><div class="card-title">Kit Fumo per Pneumatici</div><div class="card-price">$1.100</div></div>
-            <div class="card"><div class="card-title">Set di Ruote</div><div class="card-price">$1.100</div></div>
+        <!-- SEZIONE STORIA -->
+        <section id="storia">
+            <h2>Storia dell'Azienda</h2>
+            <div class="story-box">
+                Fondata nel <strong>1987</strong> nel cuore di San Andreas, <strong>Los Santos Customs</strong> nasce come una piccola officina di riparazioni locali per poi trasformarsi nel punto di riferimento assoluto per il tuning di lusso, le modifiche motoristiche e le verniciature custom dell'intera città. <br><br>
+                Superando le sfide del tempo e l'evoluzione tecnologica dei veicoli moderni, l'officina ha mantenuto intatta la propria filosofia originaria: <strong>passione maniacale per i dettagli, affidabilità assoluta e rispetto per il cliente</strong>. Oggi serviamo i cittadini e le forze dell'ordine con attrezzature all'avanguardia per garantire prestazioni senza compromessi su qualsiasi tipo di mezzo.
+            </div>
+        </section>
 
-            <!-- RIGA 3 -->
-            <div class="card"><div class="card-title">Olio Motore</div><div class="card-price">$800</div></div>
-            <div class="card"><div class="card-title">Sostituzione Frizioni</div><div class="card-price">$1.100</div></div>
-            <div class="card"><div class="card-title">Filtro Aria</div><div class="card-price">$1.100</div></div>
-            <div class="card"><div class="card-title">Candela di Accensione</div><div class="card-price">$1.100</div></div>
-            <div class="card"><div class="card-title">Sostituzione Pastiglie Freni</div><div class="card-price">$1.100</div></div>
-
-            <!-- RIGA 4 -->
-            <div class="card"><div class="card-title">Parti Sospensioni</div><div class="card-price">$1.100</div></div>
-            <div class="card"><div class="card-title">Sostituzione Pneumatici</div><div class="card-price">$1.100</div></div>
-            <div class="card"><div class="card-title">Controller di Illuminazione</div><div class="card-price">$900</div></div>
-            <div class="card"><div class="card-title">Kit Distanziali</div><div class="card-price">$900</div></div>
-            <div class="card"><div class="card-title">Fuel Pumper</div><div class="card-price">$5.000</div></div>
-
-            <!-- RIGA 5 -->
-            <div class="card"><div class="card-title">Motore Elettrico</div><div class="card-price">$900</div></div>
-            <div class="card"><div class="card-title">Turbo</div><div class="card-price">$1.100</div></div>
-            <div class="card"><div class="card-title">Batteria Elettrica</div><div class="card-price">$900</div></div>
-            <div class="card"><div class="card-title">Raffreddamento</div><div class="card-price">$900</div></div>
-            <div class="card"><div class="card-title">Pneumatici Off-Road</div><div class="card-price">$30.000</div></div>
-        </div>
-
-        <div class="action-panel">
-            <h2>Servizio Clienti & Assunzioni</h2>
+        <!-- SEZIONE LISTINO -->
+        <section id="listino">
+            <h2>Listino Prezzi</h2>
+            <p class="section-desc">Modifiche estetiche, motoristiche e componenti strutturali certificate dai nostri meccanici.</p>
+            
+            <div class="grid-container">
+                <!-- Voci del listino -->
+                <div class="card"><div class="card-title">Kit di Pulizia</div><div class="card-price">$200</div></div>
+                <div class="card"><div class="card-title">Nastro Adesivo</div><div class="card-price">$500</div></div>
+                <div class="card"><div class="card-title">Kit di Riparazione</div><div class="card-price">$1.200 <span>FDO: $950</span></div></div>
+                <div class="card"><div class="card-title">Parti Cosmetiche</div><div class="card-price">$1.100</div></div>
+                <div class="card"><div class="card-title">Kit per Riverniciatura</div><div class="card-price">$1.100</div></div>
+                <div class="card"><div class="card-title">Parti per Prestazioni</div><div class="card-price">$1.100</div></div>
+                <div class="card"><div class="card-title">Kit Extra</div><div class="card-price">$1.100</div></div>
+                <div class="card"><div class="card-title">Kit Fumo per Pneumatici</div><div class="card-price">$1.100</div></div>
+                <div class="card"><div class="card-title">Set di Ruote</div><div class="card-price">$1.100</div></div>
+                <div class="card"><div class="card-title">Olio Motore</div><div class="card-price">$800</div></div>
+                <div class="card"><div class="card-title">Sostituzione Frizioni</div><div class="card-price">$1.100</div></div>
+                <div class="card"><div class="card-title">Filtro Aria</div><div class="card-price">$1.100</div></div>
+                <div class="card"><div class="card-title">Candela di Accensione</div><div class="card-price">$1.100</div></div>
+                <div class="card"><div class="card-title">Sostituzione Pastiglie Freni</div><div class="card-price">$1.100</div></div>
+                <div class="card"><div class="card-title">Parti Sospensioni</div><div class="card-price">$1.100</div></div>
