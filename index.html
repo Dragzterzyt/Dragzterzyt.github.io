@@ -14,34 +14,68 @@
             --neon-glow: rgba(223, 173, 54, 0.25);
         }
 
+        /* SCORRIMENTO FLUIDO PER I COLLEGAMENTI */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body { 
             background-color: var(--bg-dark); 
             color: var(--text-light); 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 0; 
             padding: 0; 
-            /* Sfondo HD con Auto Custom e Officina */
             background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('https://unsplash.com'); 
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
         }
 
-        /* Barra di Navigazione */
+        /* Barra di Navigazione Principale */
         header { 
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            padding: 25px 20px; 
+            padding: 20px 20px 0 20px; /* Modificato il padding per far spazio al menu */
             text-align: center;
             border-bottom: 3px solid var(--primary);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+            position: sticky; /* Fa in modo che il menu resti in alto quando scorri */
+            top: 0;
+            z-index: 1000;
         }
 
         .logo-container img {
             width: 120px;
             height: auto;
             filter: drop-shadow(0 0 10px rgba(223, 173, 54, 0.5));
+            margin-bottom: 15px;
+        }
+
+        /* STILE DEL MENU DI NAVIGAZIONE */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-bottom: 15px;
+        }
+
+        .navbar a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 8px 16px;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar a:hover {
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         .container { 
@@ -58,6 +92,7 @@
             border-radius: 14px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.7);
             margin-bottom: 40px;
+            scroll-margin-top: 150px; /* Offset per non far coprire il titolo dal menu fisso */
         }
 
         h2 {
@@ -155,6 +190,10 @@
         .action-box {
             text-align: center;
             padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .btn-link { 
@@ -200,12 +239,20 @@
         <div class="logo-container">
             <img src="logo.png" alt="Los Santos Customs Logo">
         </div>
+        <!-- MENU DI NAVIGAZIONE CON I COLLEGAMENTI (HREF) -->
+        <nav class="navbar">
+            <a href="#storia">Storia</a>
+            <a href="#listino">Listino Prezzi</a>
+            <a href="#foto-lavori">Foto Lavori</a>
+            <a href="#contatti">Contatti</a>
+            <a href="#candidature">Candidature</a>
+        </nav>
     </header>
 
     <div class="container">
 
-        <!-- SEZIONE 1: STORIA -->
-        <div class="section-block">
+        <!-- SEZIONE 1: STORIA (Nota l'attributo id="storia") -->
+        <div id="storia" class="section-block">
             <h2>Storia dell'Azienda</h2>
             <p style="line-height: 1.8; color: var(--text-gray); font-size: 16px; margin: 0;">
                 Fondata nel <strong>1987</strong> nel cuore di San Andreas, <strong>Los Santos Customs</strong> nasce come una piccola officina di riparazioni locali per poi trasformarsi nel punto di riferimento assoluto per il tuning di lusso, le modifiche motoristiche e le verniciature custom dell'intera città. <br><br>
@@ -213,8 +260,8 @@
             </p>
         </div>
 
-        <!-- SEZIONE 2: LISTINO PREZZI -->
-        <div class="section-block">
+        <!-- SEZIONE 2: LISTINO PREZZI (Nota l'attributo id="listino") -->
+        <div id="listino" class="section-block">
             <h2>Listino Prezzi Ufficiale</h2>
             <p class="section-desc">Componenti strutturali, estetiche e modifiche meccaniche certificate dai nostri professionisti.</p>
             
@@ -240,3 +287,46 @@
                 <div class="price-card"><div class="price-title">Fuel Pumper</div><div class="price-value">$5.000</div></div>
                 <div class="price-card"><div class="price-title">Motore Elettrico</div><div class="price-value">$900</div></div>
                 <div class="price-card"><div class="price-title">Turbo</div><div class="price-value">$1.100</div></div>
+            </div>
+        </div>
+
+        <!-- SEZIONE 3: FOTO LAVORI -->
+        <div id="foto-lavori" class="section-block">
+            <h2>Foto Lavori</h2>
+            <p class="section-desc">Le nostre creazioni più recenti e le customizzazioni più estreme.</p>
+            <div class="gallery-grid">
+                <!-- Aggiungi le tue immagini qui sostituendo i link -->
+                <div class="photo-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Lavoro 1">
+                    <div class="photo-caption">Nissan Skyline GT-R</div>
+                </div>
+                <div class="photo-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Lavoro 2">
+                    <div class="photo-caption">Elegy Retro Custom</div>
+                </div>
+                <div class="photo-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Lavoro 3">
+                    <div class="photo-caption">Banshee 900R</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEZIONE 4: CONTATTI E CANDIDATURE -->
+        <div id="contatti" class="section-block">
+            <h2>Contatti & Candidature</h2>
+            <p class="section-desc">Entra nel nostro server Discord per prenotare un appuntamento o apri un ticket per inviare la tua candidatura come meccanico.</p>
+            <div id="candidature" class="action-box">
+                <!-- Sostituisci il # con il link del tuo Discord / Modulo -->
+                <a href="#" class="btn-link btn-discord">Entra nel Discord</a>
+                <a href="#" class="btn-link btn-google">Modulo Candidature</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2024 Los Santos Customs. Sito ufficiale per server FiveM. Tutti i diritti riservati.
+    </footer>
+
+</body>
+</html>
