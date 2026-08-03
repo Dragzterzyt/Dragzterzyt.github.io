@@ -3,44 +3,60 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LSC - Listino Prezzi</title>
+    <title>Los Santos Customs - Listino Prezzi</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="bg-image" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('sfondo.jpg');"></div>
+
     <header>
-        <div class="logo-small"><img src="logo.png" alt="LSC"></div>
+        <div class="logo-small">
+            <img src="logo.png" alt="LSC Logo Piccolo">
+        </div>
+        
         <nav class="navbar-center">
             <a href="index.html">Home</a>
             <a href="storia.html">Storia</a>
             <a href="listino.html">Listino Prezzi</a>
-            <a href="foto.html">I Nostri Lavori</a>
+            <a href="foto.html">Foto Lavori</a>
         </nav>
-        <div class="navbar-right"><a href="https://cfx.re/join/6my4kj4" target="_blank" class="btn-outline-small">Entra in Città</a></div>
+
+        <div class="navbar-right">
+            <a href="https://cfx.re/join/6my4kj4" target="_blank" class="btn-outline-small">Entra in Città</a>
+        </div>
     </header>
 
     <div class="container">
         <div class="section-block">
-            <h2>Listino Materiali Meccanici</h2>
-            <div class="minimal-list">
-                <div class="list-item"><span class="item-name">Tablet del Meccanico</span> <span class="item-price">$1.100</span></div>
-                <div class="list-item"><span class="item-name">Kit di Pulizia</span> <span class="item-price">$25</span></div>
-                <div class="list-item"><span class="item-name">Nastro Adesivo</span> <span class="item-price">$500</span></div>
-                <div class="list-item">
-                    <span class="item-name">Kit di Riparazione</span> 
-                    <span><span class="fdo-tag">FDO: $950</span> <span class="item-price">$1.200</span></span>
-                </div>
-                <div class="list-item"><span class="item-name">Parti Cosmetiche</span> <span class="item-price">$1.100</span></div>
-                <div class="list-item"><span class="item-name">Kit per Riverniciatura</span> <span class="item-price">$1.100</span></div>
-                <div class="list-item"><span class="item-name">Parti per Prestazioni</span> <span class="item-price">$1.100</span></div>
-                <div class="list-item"><span class="item-name">Olio Motore</span> <span class="item-price">$800</span></div>
-                <div class="list-item"><span class="item-name">Filtro Aria</span> <span class="item-price">$1.100</span></div>
-                <div class="list-item"><span class="item-name">Kit Distanziali</span> <span class="item-price">$900</span></div>
-                <div class="list-item"><span class="item-name">Fuel Pumper</span> <span class="item-price">$5.000</span></div>
-                <div class="list-item"><span class="item-name">Turbo</span> <span class="item-price">$1.100</span></div>
-                <div class="list-item"><span class="item-name">Batteria Elettrica</span> <span class="item-price">$900</span></div>
-                <div class="list-item"><span class="item-name">Pneumatici Off-Road</span> <span class="item-price">$30.000</span></div>
+            <h2>Listino Prezzi Ufficiale</h2>
+            <p class="section-desc">Componenti strutturali, estetiche e modifiche meccaniche certificate dai nostri professionisti.</p>
+            
+            <div class="grid-container">
+                <div class="price-card"><div class="price-title">Kit di Pulizia</div><div class="price-value">$200</div></div>
+                <div class="price-card"><div class="price-title">Nastro Adesivo</div><div class="price-value">$500</div></div>
+                <div class="price-card"><div class="price-title">Kit di Riparazione</div><div class="price-value">$1.200 <span>FDO: $950</span></div></div>
+                <div class="price-card"><div class="price-title">Parti Cosmetiche</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Kit per Riverniciatura</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Parti per Prestazioni</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Kit Extra</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Kit Fumo per Pneumatici</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Set di Ruote</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Olio Motore</div><div class="price-value">$800</div></div>
+                <div class="price-card"><div class="price-title">Sostituzione Frizioni</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Filtro Aria</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Candela di Accensione</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Sostituzione Pastiglie Freni</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Parti Sospensioni</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Sostituzione Pneumatici</div><div class="price-value">$1.100</div></div>
+                <div class="price-card"><div class="price-title">Controller di Illuminazione</div><div class="price-value">$900</div></div>
+                <div class="price-card"><div class="price-title">Kit Distanziali</div><div class="price-value">$900</div></div>
+                <div class="price-card"><div class="price-title">Fuel Pumper</div><div class="price-value">$5.000</div></div>
+                <div class="price-card"><div class="price-title">Motore Elettrico</div><div class="price-value">$900</div></div>
+                <div class="price-card"><div class="price-title">Turbo</div><div class="price-value">$1.100</div></div>
             </div>
         </div>
     </div>
+
 </body>
 </html>
