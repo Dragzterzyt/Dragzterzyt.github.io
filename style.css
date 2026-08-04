@@ -15,7 +15,6 @@ body, html {
     color: var(--text-light);
 }
 
-/* SFONDO PULITO SENZA FILTRI NERI */
 .bg-image {
     position: fixed;
     top: 0;
@@ -28,7 +27,6 @@ body, html {
     z-index: 0;
 }
 
-/* ASSICURA CHE I CONTENUTI STIANO SOPRA LO SFONDO */
 .hero-section, .container, .bottom-logos {
     position: relative;
     z-index: 2; 
@@ -59,7 +57,7 @@ header {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: color 0.3s;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Aiuta a leggere il menu sullo sfondo chiaro */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
 .navbar-center a:hover { color: var(--primary); }
@@ -70,7 +68,7 @@ header {
     color: var(--text-light);
     text-decoration: none;
     border: 1px solid var(--primary);
-    background-color: rgba(0, 0, 0, 0.5); /* Sfondo leggermente scuro per far leggere il tasto */
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 8px 20px;
     border-radius: 4px;
     text-transform: uppercase;
@@ -100,7 +98,6 @@ header {
     letter-spacing: 4px;
     color: #fff;
     margin-bottom: 60px;
-    /* Ombra pesante per far leggere il testo su sfondi chiari */
     text-shadow: 0 4px 15px rgba(0,0,0,0.9), 0 2px 5px rgba(0,0,0,1); 
 }
 
@@ -131,7 +128,7 @@ header {
 }
 
 .btn-secondary {
-    background-color: rgba(0, 0, 0, 0.6); /* Leggermente scuro per risaltare */
+    background-color: rgba(0, 0, 0, 0.6);
     color: var(--text-light);
     font-weight: 600;
     border: 2px solid #ffffff;
@@ -192,6 +189,7 @@ p.section-desc {
     line-height: 1.6;
 }
 
+/* --- LISTINO --- */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -228,33 +226,109 @@ p.section-desc {
     margin-top: 3px;
 }
 
+
+/* --- GALLERIA MODERNA --- */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Leggermente allargate */
+    gap: 25px;
 }
 
 .photo-card {
-    background: rgba(30, 30, 30, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 12px;
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 15px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    cursor: pointer; /* Fa comparire la manina al passaggio */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.photo-card img {
+.photo-card:hover {
+    transform: translateY(-8px); /* La card si alza leggermente */
+    box-shadow: 0 15px 30px rgba(240, 163, 10, 0.2); /* Ombra colorata */
+    border-color: rgba(240, 163, 10, 0.5); /* Il bordo diventa arancione/giallo */
+}
+
+.img-wrapper {
+    overflow: hidden; /* Nasconde lo sbordo dello zoom */
+    border-radius: 8px;
+    position: relative;
+}
+
+.img-wrapper img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 6px;
-    background: #222;
+    display: block;
+    transition: transform 0.5s ease; /* Transizione lenta ed elegante */
+}
+
+/* Quando si passa sulla card, l'immagine dentro si ingrandisce */
+.photo-card:hover .img-wrapper img {
+    transform: scale(1.1); 
 }
 
 .photo-caption {
-    margin-top: 10px;
+    margin-top: 15px;
+    font-family: 'Oswald', sans-serif;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
-    color: var(--text-light);
+    letter-spacing: 2px;
+    color: var(--primary);
+}
+
+/* --- LIGHTBOX (Zoom a schermo intero) --- */
+.lightbox {
+    display: none; /* Nascosto di default */
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0,0,0,1);
+    animation: zoomIn 0.3s ease-out; /* Effetto di comparsa */
+}
+
+.lightbox-caption {
+    color: var(--primary);
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--primary);
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
