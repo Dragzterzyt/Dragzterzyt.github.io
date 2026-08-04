@@ -30,27 +30,82 @@
     <div class="container">
         <div class="section-block">
             <h2>Foto Lavori</h2>
-            <p class="section-desc">Le nostre creazioni più recenti e le customizzazioni più estreme.</p>
+            <p class="section-desc">Le nostre creazioni più recenti e le customizzazioni più estreme. Clicca sulle foto per ingrandirle.</p>
+            
             <div class="gallery-grid">
                 
-                <div class="photo-card">
-                    <img src="auto1.jpg" alt="Sunrise">
-                    <div class="photo-caption">Sunrise</div>
+                <!-- SLOT 1 -->
+                <div class="photo-card" onclick="openLightbox('auto1.jpg', 'Sunrise Custom')">
+                    <div class="img-wrapper">
+                        <img src="auto1.jpg" alt="Sunrise">
+                    </div>
+                    <div class="photo-caption">Sunrise Custom</div>
                 </div>
                 
-                <div class="photo-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Lavoro 2">
-                    <div class="photo-caption">Elegy Retro Custom</div>
+                <!-- SLOT 2 -->
+                <div class="photo-card" onclick="openLightbox('auto2.jpg', 'Elegy Retro')">
+                    <div class="img-wrapper">
+                        <!-- Sostituisci il link di placeholder con auto2.jpg appena ce l'hai -->
+                        <img src="https://via.placeholder.com/400x300/333/fff?text=Metti+auto2.jpg" alt="Elegy">
+                    </div>
+                    <div class="photo-caption">Elegy Retro</div>
                 </div>
                 
-                <div class="photo-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Lavoro 3">
+                <!-- SLOT 3 -->
+                <div class="photo-card" onclick="openLightbox('auto3.jpg', 'Banshee 900R')">
+                    <div class="img-wrapper">
+                        <img src="https://via.placeholder.com/400x300/333/fff?text=Metti+auto3.jpg" alt="Banshee">
+                    </div>
                     <div class="photo-caption">Banshee 900R</div>
+                </div>
+
+                <!-- SLOT 4 -->
+                <div class="photo-card" onclick="openLightbox('auto4.jpg', 'Nissan Skyline GT-R')">
+                    <div class="img-wrapper">
+                        <img src="https://via.placeholder.com/400x300/333/fff?text=Metti+auto4.jpg" alt="Skyline">
+                    </div>
+                    <div class="photo-caption">Nissan Skyline GT-R</div>
+                </div>
+
+                <!-- SLOT 5 -->
+                <div class="photo-card" onclick="openLightbox('auto5.jpg', 'Sultan RS')">
+                    <div class="img-wrapper">
+                        <img src="https://via.placeholder.com/400x300/333/fff?text=Metti+auto5.jpg" alt="Sultan">
+                    </div>
+                    <div class="photo-caption">Sultan RS</div>
+                </div>
+
+                <!-- SLOT 6 -->
+                <div class="photo-card" onclick="openLightbox('auto6.jpg', 'Karin Kuruma')">
+                    <div class="img-wrapper">
+                        <img src="https://via.placeholder.com/400x300/333/fff?text=Metti+auto6.jpg" alt="Kuruma">
+                    </div>
+                    <div class="photo-caption">Karin Kuruma</div>
                 </div>
                 
             </div>
         </div>
     </div>
+
+    <!-- STRUTTURA DEL LIGHTBOX (Finestra a schermo intero nascosta) -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- SCRIPT PER FAR FUNZIONARE IL CLIC SULLE FOTO -->
+    <script>
+        function openLightbox(imageSrc, captionText) {
+            document.getElementById('lightbox-img').src = imageSrc;
+            document.getElementById('lightbox-caption').innerText = captionText;
+            document.getElementById('lightbox').style.display = 'flex'; // Mostra il box
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none'; // Nasconde il box
+        }
+    </script>
 
 </body>
 </html>
