@@ -11,24 +11,24 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #111; /* Colore di sicurezza */
+    background-color: #111;
     color: var(--text-light);
 }
 
-/* IL LIVELLO DELLO SFONDO (Corretto) */
+/* SFONDO PULITO SENZA FILTRI NERI */
 .bg-image {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('sfondo.jpg'); 
+    background-image: url('sfondo.jpg'); 
     background-size: cover;
     background-position: center;
-    z-index: 0; /* PRIMA ERA -1, ORA E' A 0 PER ESSERE VISIBILE */
+    z-index: 0;
 }
 
-/* ASSICURIAMO CHE TUTTO IL CONTENUTO STIA SOPRA LO SFONDO */
+/* ASSICURA CHE I CONTENUTI STIANO SOPRA LO SFONDO */
 .hero-section, .container, .bottom-logos {
     position: relative;
     z-index: 2; 
@@ -44,7 +44,7 @@ header {
     left: 0;
     width: 100%;
     box-sizing: border-box;
-    z-index: 10; /* Il menu resta il livello più alto di tutti */
+    z-index: 10;
 }
 
 .logo-small img { width: 120px; height: auto; }
@@ -59,6 +59,7 @@ header {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: color 0.3s;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Aiuta a leggere il menu sullo sfondo chiaro */
 }
 
 .navbar-center a:hover { color: var(--primary); }
@@ -69,6 +70,7 @@ header {
     color: var(--text-light);
     text-decoration: none;
     border: 1px solid var(--primary);
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo leggermente scuro per far leggere il tasto */
     padding: 8px 20px;
     border-radius: 4px;
     text-transform: uppercase;
@@ -98,7 +100,8 @@ header {
     letter-spacing: 4px;
     color: #fff;
     margin-bottom: 60px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+    /* Ombra pesante per far leggere il testo su sfondi chiari */
+    text-shadow: 0 4px 15px rgba(0,0,0,0.9), 0 2px 5px rgba(0,0,0,1); 
 }
 
 .hero-buttons { display: flex; gap: 20px; }
@@ -119,6 +122,7 @@ header {
     color: #000;
     font-weight: 700;
     border: 2px solid var(--primary);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .btn-main:hover {
@@ -127,15 +131,16 @@ header {
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.6); /* Leggermente scuro per risaltare */
     color: var(--text-light);
     font-weight: 600;
     border: 2px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .btn-secondary:hover {
     transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .bottom-logos {
@@ -145,7 +150,8 @@ header {
     display: flex;
     justify-content: center;
     gap: 30px;
-    opacity: 0.7;
+    opacity: 0.9;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
 }
 
 .bottom-logos img { height: 30px; width: auto; }
